@@ -32,69 +32,85 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/save"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/save",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false
     },
     "publish": {
-      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/publish"
-    },
-    "validate": {
-      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/validate"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/publish",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false
     },
     "stop": {
-      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/stop"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/stop",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false
     },
-    "wizardSteps": [
-      {
-        "label": "Configure Message",
-        "key": "step1"
-      }
-    ],
-    "userInterfaces": {
-      "configModal": {
-        "height": 600,
-        "width": 800,
-        "fullscreen": false
-      }
-    },
-    "outcomes": [
-      {
-        "arguments": {
-          "branchResult": "message_stored"
-        },
-        "metaData": {
-          "label": "Message Successfully Stored"
-        }
-      },
-      {
-        "arguments": {
-          "branchResult": "generic_error"
-        },
-        "metaData": {
-          "label": "Generic ERROR on Custom Activity"
-        }
-      }
-    ],
-    "schema": {
+    "validation": {
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/validate",
+      "verb": "POST",
+      "body": "",
+      "useJwt": false
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configure Message",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 600,
+      "width": 800,
+      "fullscreen": false
+    }
+  },
+  "outcomes": [
+    {
       "arguments": {
-        "execute": {
-          "inArguments": [
-            {
-              "from": {
-                "dataType": "String",
-                "isNullable": true,
-                "direction": "in"
-              }
-            },
-            {
-              "to": {
-                "dataType": "String",
-                "isNullable": true,
-                "direction": "in"
-              }
+        "branchResult": "message_stored"
+      },
+      "metaData": {
+        "label": "Message Successfully Stored"
+      }
+    },
+    {
+      "arguments": {
+        "branchResult": "generic_error"
+      },
+      "metaData": {
+        "label": "Generic ERROR on Custom Activity"
+      }
+    }
+  ],
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "from": {
+              "dataType": "String",
+              "isNullable": true,
+              "direction": "in"
             }
-          ],
-          "outArguments": []
-        }
+          },
+          {
+            "to": {
+              "dataType": "String",
+              "isNullable": true,
+              "direction": "in"
+            }
+          }
+        ],
+        "outArguments": []
       }
     }
   }
+}
