@@ -1,78 +1,60 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-       "icon": "images/icon.png",
-       "category": "custom"
-    },
-    "type": "RESTDECISION",
-    "lang": {
-       "en-US": {
-           "name": "Custom Activity Test",
-           "description": "Custom Activity Test",
-           "TwilioMessage":"test"
-       }
-    },
-    "arguments": {
-        "execute": {
-            "inArguments": [
-                {
-                  "to": "{{Event.\"data-extension-name\".\"mobile\"}}"
-                }
-            ],
-            "outArguments": [],
-            "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/execute",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "concurrentRequests": 2,
-            "timeout": 10000,
-            "retryCount": 5,
-            "retryDelay": 1000
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "category": "custom"
+  },
+  "type": "RESTDECISION",
+  "lang": {
+    "en-US": {
+      "name": "CA-Flow Control Test",
+      "description": "Custom Activity Flow Control Test"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "to": "{{Event.\"data-extension-name\".\"mobile\"}}"
         }
+      ],
+      "outArguments": [],
+      "url": "https://${req.headers.host}/execute",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false,
+      "concurrentRequests": 2,
+      "timeout": 10000,
+      "retryCount": 5,
+      "retryDelay": 1000
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "https://${req.headers.host}/save"
     },
-    "configurationArguments": {
-      "applicationExtensionKey": "472c3918-eab5-4743-b084-e9722b0e467b",
-       "save": {
-           "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/save",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false
-       },
-       "publish": {
-           "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/publish",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false
-       },
-       "stop": {
-           "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/stop",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false
-       }, 
-       "validation": {
-            "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/validate",
-            "verb": "POST",
-            "body": "",
-            "useJwt": false
-       } 
+    "publish": {
+      "url": "https://${req.headers.host}/publish"
+    },
+    "validate": {
+      "url": "https://${req.headers.host}/validate"
+    },
+    "stop": {
+      "url": "https://${req.headers.host}/stop"
     },
     "wizardSteps": [
-       { 
-            "label": "Configure Message", 
-            "key": "step1" 
-        }
+      {
+        "label": "Configure Message",
+        "key": "step1"
+      }
     ],
     "userInterfaces": {
-       "configModal": {
-           "height": 600,
-           "width": 800,
-           "fullscreen": false
-       }
+      "configModal": {
+        "height": 600,
+        "width": 800,
+        "fullscreen": false
+      }
     },
     "outcomes": [
       {
@@ -93,26 +75,26 @@
       }
     ],
     "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [
-                    {
-                        "from": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "in"   
-                        }
-                    },                    
-                    {
-                        "to": {
-                            "dataType": "String",
-                            "isNullable": true,
-                            "direction": "in"   
-                        }
-                    }
-                ],
-                "outArguments": []
+      "arguments": {
+        "execute": {
+          "inArguments": [
+            {
+              "from": {
+                "dataType": "String",
+                "isNullable": true,
+                "direction": "in"
+              }
+            },
+            {
+              "to": {
+                "dataType": "String",
+                "isNullable": true,
+                "direction": "in"
+              }
             }
+          ],
+          "outArguments": []
         }
+      }
     }
-}
+  }
