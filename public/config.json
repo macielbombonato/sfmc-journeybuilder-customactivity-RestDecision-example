@@ -15,7 +15,7 @@
     "execute": {
       "inArguments": [
         {
-          "to": "{{Event.\"data-extension-name\".\"mobile\"}}"
+          "to": "{{Interaction.result}}"
         }
       ],
       "outArguments": [],
