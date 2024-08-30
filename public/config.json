@@ -19,7 +19,7 @@
         }
       ],
       "outArguments": [],
-      "url": "https://${req.headers.host}/execute",
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/execute",
       "verb": "POST",
       "body": "",
       "format": "json",
@@ -32,16 +32,16 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://${req.headers.host}/save"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/save"
     },
     "publish": {
-      "url": "https://${req.headers.host}/publish"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/publish"
     },
     "validate": {
-      "url": "https://${req.headers.host}/validate"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/validate"
     },
     "stop": {
-      "url": "https://${req.headers.host}/stop"
+      "url": "https://sfmc-jb-ca-restdecision-c774fde901b8.herokuapp.com/stop"
     },
     "wizardSteps": [
       {
